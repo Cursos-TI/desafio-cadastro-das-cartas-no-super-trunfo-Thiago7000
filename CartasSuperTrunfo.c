@@ -104,8 +104,8 @@ float densidade_populacional1 = (float) populacao1/area1;
 double pib_per_capita1 = (double) pib1 * 1000000000.0/ (float) populacao1;
 
 //Calculo super poder, (CARTA 1) 
-float super_poder1 = (float) populacao1 + area1 + pib1 + (float) pontos_turisticos1 + 
-                                        pib_per_capita1 + 1/densidade_populacional1;     
+double super_poder1 = (double) populacao1 + area1 + pib1 * 1000000000.0 + (double) pontos_turisticos1 + 
+(double) pontos_turisticos1 + pib_per_capita1 + 1/densidade_populacional1;     
 
 //EXIBINDO DADOS DA CARTA 1
 printf ("CARTA 1\n");
@@ -126,15 +126,14 @@ double pib_per_capita2 = (double) pib2 * 1000000000.0/ (float) populacao2;
 
 
 //Calculo super poder, (CARTA 2) 
-float super_poder2 = (float) populacao2 + area2 + pib2 + (float) pontos_turisticos2 + 
-                                        pib_per_capita2 + 1/densidade_populacional2;     
-
+double super_poder2 = (double) populacao2 + area2 + pib2 * 1000000000.0 +      
+(double) pontos_turisticos2 + pib_per_capita2 + 1/densidade_populacional2;
 
 
 //EXIBINDO DADOS DA CARTA 2
 printf ("CARTA 2\n");
 printf ("Estado: %c\n", letra2);
-printf("Codigo da cidade: %c%s\n",letra2,numero2);
+printf("Codigo da cidade: %c%s\n", letra2,numero2);
 printf ("Nome da cidade: %s\n", nome_cidade2);
 printf ("Populacao: %d\n", populacao2);
 printf ("Area: %.2f km²\n", area2);
@@ -148,26 +147,26 @@ printf ("Super poder: %f\n", super_poder2);
 
 
 //COMPARAÇÃO DAS CARTAS
-float comparacao_populacao = populacao1 > populacao2;
-float comparacao_area = area1 > area2;
-float comparacao_pib = pib1 > pib2;
-float comparacao_pontos_turisticos = pontos_turisticos1 > pontos_turisticos2;
-float comparacao_densidade = densidade_populacional1 < densidade_populacional2;
-float comparacao_pib_per_capita = pib_per_capita1 > pib_per_capita2;
-float comparacao_super_poder = super_poder1 > super_poder2;
+int comparacao_populacao = populacao1 > populacao2;
+int comparacao_area = area1 > area2;
+int comparacao_pib = pib1 > pib2;
+int comparacao_pontos_turisticos = pontos_turisticos1 > pontos_turisticos2;
+int comparacao_densidade = densidade_populacional1 < densidade_populacional2;
+int comparacao_pib_per_capita = pib_per_capita1 > pib_per_capita2;
+int comparacao_super_poder = super_poder1 > super_poder2;
 
 
 
 //EXIBINDO COMPARAÇÃO 
 
 printf ("Comparacao de Cartas:\n");
-printf ("Populacao: Carta 1 venceu (.0%f)\n", comparacao_populacao);
-printf ("Area: Carta 1 venceu (.0%f)\n", comparacao_area);
-printf ("PIB: Carta 1 venceu (.0%f)\n", comparacao_pib);
-printf ("Pontos Turisticos: Carta 1 venceu (.0%f)\n", comparacao_pontos_turisticos);
-printf ("Densidade Populacional: Carta 1 venceu (.0%f)\n", comparacao_densidade);
-printf ("PIB per Capita: Carta 1 venceu (.0%f)\n", comparacao_pib_per_capita);
-printf ("Super Poder: Carta 1 venceu (.0%f)\n", comparacao_super_poder);
+printf ("Populacao: Carta 1 venceu (%d)\n", comparacao_populacao);
+printf ("Area: Carta 1 venceu (%d)\n", comparacao_area);
+printf ("PIB: Carta 1 venceu (%d)\n", comparacao_pib);
+printf ("Pontos Turisticos: Carta 1 venceu (%d)\n", comparacao_pontos_turisticos);
+printf ("Densidade Populacional: Carta 1 venceu (%d)\n", comparacao_densidade);
+printf ("PIB per Capita: Carta 1 venceu (%d)\n", comparacao_pib_per_capita);
+printf ("Super Poder: Carta 1 venceu (%d)\n", comparacao_super_poder);
 
 
 
